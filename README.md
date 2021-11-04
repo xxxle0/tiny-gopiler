@@ -1,4 +1,4 @@
-# Introduction;
+# Introduction:
 I want to do some exp to understand how the compiler can check the code syntax. I know it will AST (Abstract Syntax Tree) from the code then traverse the tree to check the syntax is correct or not?
 
 My quote: ***You Understand It <-> You Build It.**
@@ -10,7 +10,7 @@ Expression is a snippet of code that return the value
 For Example:
 - 1 + 2 (Compute expression)
 - "Hello World" (String expression)
-Fun fact: IIFE (Invoke Immediately Function Expression) is an expression
+Fun fact: IIFE (Invoke Immediately Function Expression) of Javascript is an expression
 ## What is statement?
 Statement is a snippet of code that performs an action
 For Example:
