@@ -34,5 +34,5 @@ contains 2 steps:
 
 # Folder structure:
 # References:
-https://github.com/hazbo/the-super-tiny-compiler
-https://www.destroyallsoftware.com/screencasts/catalog/a-compiler-from-scratch
+- https://github.com/hazbo/the-super-tiny-compiler
+- https://www.destroyallsoftware.com/screencasts/catalog/a-compiler-from-scratch
