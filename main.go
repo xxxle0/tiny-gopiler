@@ -1,8 +1,9 @@
 package main
 
 import (
-  "log"
+	"log"
 )
+
 func main() {
-  log.Println("this is main function")
+	log.Println("this is main function")
 }

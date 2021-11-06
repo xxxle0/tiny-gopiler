@@ -22,17 +22,65 @@ C++ compiler (transform the codebase from C++/C to Assembly then Machine Code)
 
 # How? 
 ## How the compiler works?
-Parsing -> Transformation -> Code Generation
+**Parsing** -> **Transformation** -> **Code Generation**
 ### Parsing
-This step is breaking down the codebase to AST
+This step is breaking down the raw codebase to AST
 contains 2 steps:
 - Lexical Analysis (you can call it Tokenize step)
 - Syntactic Analysis
+
+#### Lexical Analysis:
+Input: Raw Code  
+Process: Tokenize  
+Output: Tokenizer or Lexer  
+Example:  
+Input: x + y  
+Output:  
+```javascript
+[
+    { type: 'Identifier', value: 'x' },
+    { type: 'Operand', value: '+' },
+    { type: 'Identifier', value: 'y' },
+]
+```
+- Input: LexicalAnalysis(x)  
+- Output:  
+```javascript
+[
+    { type: 'Identifier', value: 'LexicalAnalysis' },
+    { type: 'Punctuator', value: '(' },
+    { type: 'Identifier', value: 'x' },
+    { type: 'Punctuator', value: ')' },
+]
+```
+#### Syntactic Analysis
+Input: Tokenizer or Lexer  
+Process: Parse  
+Output: Abstract Syntax Tree (AST)  
+Example:  
+Input:   
+```javascript
+[
+    { type: 'Identifier', value: 'x' },
+    { type: 'operand', value: '+' },
+    { type: 'Identifier', value: 'y' },
+]
+```
+Output:
+```javascript 
+[
+    { type: 'Program', body: [...]}
+]
+```
 ### Transformation
+// TODO
 
 ### Code Generation
-
+// TODO
+# General Architect:
+![General Architect](https://github.com/xxxle0/tiny-popiler/blob/master/Diagram.png?raw=true)
 # Folder structure:
 # References:
 - https://github.com/hazbo/the-super-tiny-compiler
 - https://www.destroyallsoftware.com/screencasts/catalog/a-compiler-from-scratch
+- https://www.twilio.com/blog/abstract-syntax-trees
