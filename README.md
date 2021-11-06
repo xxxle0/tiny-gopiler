@@ -39,7 +39,7 @@ Output:
 ```javascript
 [
     { type: 'Identifier', value: 'x' },
-    { type: 'Operand', value: '+' },
+    { type: 'Punctuator', value: '+' },
     { type: 'Identifier', value: 'y' },
 ]
 ```
@@ -62,7 +62,7 @@ Input:
 ```javascript
 [
     { type: 'Identifier', value: 'x' },
-    { type: 'operand', value: '+' },
+    { type: 'Punctuator', value: '+' },
     { type: 'Identifier', value: 'y' },
 ]
 ```
