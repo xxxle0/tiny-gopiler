@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"testing"
 	"tiny-gopiler/internal"
 
@@ -12,7 +11,6 @@ func TestParserTokenize(t *testing.T) {
 	parser := InitParser()
 	stringTest := "let a = 0"
 	tokens := parser.Tokenize(stringTest)
-	log.Println(tokens)
 	expectTokens := []internal.Token{
 		internal.Token{
 			Type:  "Keyword",
