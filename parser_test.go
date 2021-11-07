@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"testing"
 	"tiny-gopiler/internal"
 
@@ -33,7 +34,10 @@ func TestParserTokenize(t *testing.T) {
 }
 
 func TestParserParse(t *testing.T) {
+	stringTest := "let a = 0"
 	parser := InitParser()
-	parser.Parse()
-	assert.Equal(t, true, true)
+	tokens := parser.Tokenize(stringTest)
+	ast := parser.Parse(tokens)
+	log.Println(ast)
+	assert.Equal(t, ast, true)
 }

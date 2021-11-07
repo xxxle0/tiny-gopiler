@@ -69,7 +69,21 @@ Input:
 Output:
 ```javascript 
 [
-    { type: 'Program', body: [...]}
+    { type: 'Program', body: [
+        {
+            type: "DeclareExpression",
+            params: [
+                {
+                    type: "Identifier",
+                    Value: "x"
+                },
+                {
+                    type: "NumberLiteral",
+                    value: 10,
+                }
+            ]
+        },
+    ]}
 ]
 ```
 ### Transformation

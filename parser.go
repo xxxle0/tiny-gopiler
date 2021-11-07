@@ -6,8 +6,8 @@ import (
 )
 
 type ParserI interface {
-	Tokenize(rawCode string) []internal.Token
-	Parse()
+	Tokenize(string) []internal.Token
+	Parse([]internal.Token) internal.AST
 }
 
 type Parser struct {
@@ -58,6 +58,24 @@ func (p *Parser) Tokenize(rawCode string) []internal.Token {
 	return tokens
 }
 
-func (p *Parser) Parse() {
+func (p *Parser) Parse(tokens []internal.Token) internal.AST {
+	ast := internal.AST{
+		Type: "Program",
+		Body: []internal.Node{},
+	}
+	for _, token := range tokens {
+		node := p.TransformTokenToNode(token)
+		ast.Body = append(ast.Body, node)
+	}
+	return ast
+}
 
+func (p *Parser) TransformTokenToNode(token internal.Token) internal.Node {
+	if token.Type == "Number" {
+		return internal.Node{
+			Type:  "NumberLiteral",
+			Value: token.Value,
+		}
+	}
+	return internal.Node{}
 }
