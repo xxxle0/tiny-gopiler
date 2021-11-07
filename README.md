@@ -73,21 +73,24 @@ Output:
 [
     { type: 'Program', body: [
         {
-            type: "DeclareExpression",
+            type: "BinaryExpression",
             params: [
                 {
                     type: "Identifier",
                     Value: "x"
                 },
                 {
-                    type: "NumberLiteral",
-                    value: 10,
+                    type: "Identifier",
+                    value: "y",
                 }
             ]
         },
     ]}
 ]
 ```
+*Notes: The reason why LISP can be used for build a compiler is LISP syntax is much more easy to struct AST tree   
+`(+ 1 2)` -> the operand always be placed at the head of expression*
+
 ### Transformation
 This step takes the output from `Parsing` step then add/delete/update nodes to transform new structure AST is suitable to later usage
 
