@@ -106,3 +106,31 @@ func TestIsOperand(t *testing.T) {
 		assert.Equal(t, IsOperand(testCase.Input), testCase.Output)
 	}
 }
+
+func TestIsEndExpression(t *testing.T) {
+	testTableDriven := []TestCase{
+		TestCase{
+			Input:  "a",
+			Output: false,
+		},
+		TestCase{
+			Input:  "9",
+			Output: false,
+		},
+		TestCase{
+			Input:  "-",
+			Output: false,
+		},
+		TestCase{
+			Input:  "let",
+			Output: false,
+		},
+		TestCase{
+			Input:  ";",
+			Output: true,
+		},
+	}
+	for _, testCase := range testTableDriven {
+		assert.Equal(t, IsEndExpression(testCase.Input), testCase.Output)
+	}
+}

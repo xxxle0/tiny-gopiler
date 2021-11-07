@@ -1,6 +1,5 @@
 # Introduction:
-I want to do some exp to understand how the compiler can check the code syntax. I know it will build an AST (Abstract Syntax Tree) from the code then traverse the tree to check the syntax is correct or not? also generate anything from the Tree  
-I love this quote: 
+I want to do some exp to understand how the compiler can check the code syntax. I know it will build an AST (Abstract Syntax Tree) from the raw code then traverse the tree to check the syntax is correct or not? also generate anything from the Tree but yeah need to get my hand on dirty to find out.
 #### What I cannot create, I do not understand
 # What?
 How the compiler separate the expression, statement, function?

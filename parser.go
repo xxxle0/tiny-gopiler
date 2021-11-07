@@ -8,6 +8,7 @@ import (
 type ParserI interface {
 	Tokenize(string) []internal.Token
 	Parse([]internal.Token) internal.AST
+	TransformTokenToNode(token internal.Token) internal.Node
 }
 
 type Parser struct {
@@ -39,7 +40,7 @@ func (p *Parser) Tokenize(rawCode string) []internal.Token {
 				tokens = append(tokens, token)
 			} else if helper.IsNumber(tempString) {
 				token := internal.Token{
-					Type:  "Number",
+					Type:  "NumberLiteral",
 					Value: tempString,
 				}
 				tokens = append(tokens, token)
@@ -51,7 +52,8 @@ func (p *Parser) Tokenize(rawCode string) []internal.Token {
 				tokens = append(tokens, token)
 			} else if helper.IsEndExpression(tempString) {
 				token := internal.Token{
-					Type: "EndExpression",
+					Type:  "EndExpression",
+					Value: ";",
 				}
 				tokens = append(tokens, token)
 			}
@@ -77,10 +79,20 @@ func (p *Parser) Parse(tokens []internal.Token) internal.AST {
 
 func (p *Parser) TransformTokenToNode(token internal.Token) internal.Node {
 	if token.Type == "Keyword" {
-		return internal.Node{
-			Type:   "DeclareExpression",
-			Params: []internal.Node{},
+		if token.Value == "let" || token.Value == "var" || token.Value == "const" {
+			return internal.Node{
+				Type:   "DeclarationExpression",
+				Params: []internal.Node{},
+			}
 		}
+	} else if token.Type == "Identifier" {
+
+	} else if token.Type == "Operand" {
+
+	} else if token.Type == "Number" {
+
+	} else {
+		return internal.Node{}
 	}
 	return internal.Node{}
 }
