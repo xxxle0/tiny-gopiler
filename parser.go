@@ -84,7 +84,3 @@ func (p *Parser) TransformTokenToNode(token internal.Token) internal.Node {
 	}
 	return internal.Node{}
 }
-
-func (p *Parser) TraverseTokenArray(token []internal.Token) internal.AST {
-	return internal.AST{}
-}

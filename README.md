@@ -1,7 +1,7 @@
 # Introduction:
-I want to do some exp to understand how the compiler can check the code syntax. I know it will AST (Abstract Syntax Tree) from the code then traverse the tree to check the syntax is correct or not?
-
-My quote: ***You Understand It <-> You Build It.**
+I want to do some exp to understand how the compiler can check the code syntax. I know it will build an AST (Abstract Syntax Tree) from the code then traverse the tree to check the syntax is correct or not? also generate anything from the Tree  
+I love this quote: 
+#### What I cannot create, I do not understand
 # What?
 How the compiler separate the expression, statement, function?
 We know that a file of code contains many statement and expression
@@ -9,7 +9,9 @@ We know that a file of code contains many statement and expression
 Expression is a snippet of code that return the value
 For Example:
 - 1 + 2 (Compute expression)
-- "Hello World" (String expression)
+- "Hello World" (String literal)
+- 2 (Number literal)
+
 Fun fact: IIFE (Invoke Immediately Function Expression) of Javascript is an expression
 ## What is statement?
 Statement is a snippet of code that performs an action
@@ -34,7 +36,7 @@ Input: Raw Code
 Process: Tokenize  
 Output: Tokenizer or Lexer  
 Example:  
-Input: x + y  
+Input: **x + y**  
 Output:  
 ```javascript
 [
@@ -43,7 +45,7 @@ Output:
     { type: 'Identifier', value: 'y' },
 ]
 ```
-- Input: LexicalAnalysis(x)  
+- Input: **LexicalAnalysis(x)**  
 - Output:  
 ```javascript
 [
