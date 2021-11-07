@@ -97,6 +97,7 @@ This step takes the output from `Parsing` step then add/delete/update nodes to t
 Traverse the Transformed AST 
 # General Architect:
 ![General Architect](https://github.com/xxxle0/tiny-gopiler/blob/master/Diagram.png?raw=true)
+*https://whimsical.com/compiler-under-the-hood-D9jGFbG6JPfvhGLm2rEBDP*
 # Folder structure:
 # References:
 - https://github.com/hazbo/the-super-tiny-compiler
