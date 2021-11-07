@@ -49,6 +49,11 @@ func (p *Parser) Tokenize(rawCode string) []internal.Token {
 					Value: tempString,
 				}
 				tokens = append(tokens, token)
+			} else if helper.IsEndExpression(tempString) {
+				token := internal.Token{
+					Type: "EndExpression",
+				}
+				tokens = append(tokens, token)
 			}
 			tempString = ""
 		} else {
@@ -71,11 +76,15 @@ func (p *Parser) Parse(tokens []internal.Token) internal.AST {
 }
 
 func (p *Parser) TransformTokenToNode(token internal.Token) internal.Node {
-	if token.Type == "Number" {
+	if token.Type == "Keyword" {
 		return internal.Node{
-			Type:  "NumberLiteral",
-			Value: token.Value,
+			Type:   "DeclareExpression",
+			Params: []internal.Node{},
 		}
 	}
 	return internal.Node{}
+}
+
+func (p *Parser) TraverseTokenArray(token []internal.Token) internal.AST {
+	return internal.AST{}
 }

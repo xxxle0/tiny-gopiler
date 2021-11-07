@@ -87,10 +87,10 @@ Output:
 ]
 ```
 ### Transformation
-// TODO
+This step takes the output from `Parsing` step then add/delete/update nodes to transform new structure AST is suitable to later usage
 
 ### Code Generation
-// TODO
+Traverse the Transformed AST 
 # General Architect:
 ![General Architect](https://github.com/xxxle0/tiny-popiler/blob/master/Diagram.png?raw=true)
 # Folder structure:

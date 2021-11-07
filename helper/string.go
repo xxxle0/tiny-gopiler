@@ -30,3 +30,10 @@ func IsKeyword(keyword string) bool {
 	}
 	return false
 }
+
+func IsEndExpression(keyword string) bool {
+	if keyword == ";" {
+		return true
+	}
+	return false
+}
